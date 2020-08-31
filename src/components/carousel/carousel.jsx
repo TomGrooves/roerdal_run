@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import Style from './carousel.module.scss'
 import { RiArrowLeftCircleLine, RiArrowRightCircleLine } from 'react-icons/ri'
+import img1 from '../../images/img1.jpg'
+import img2 from '../../images/img2.jpg'
+import img3 from '../../images/img3.jpg'
+import img4 from '../../images/img4.jpg'
 
   /** Carousel accepts these props
       * height (default 45vh)
       * items (object with array of items)
       * delay (in whole seconds - default 7 seconds)
   */
-
 function Carousel(props) {
+      // Carousel object (required prop for Carousel)
+      const carouselItems = {
+        item: [
+            { img: img1},
+            { img: img2},
+            { img: img3},
+            { img: img4},
+        ]
+    }
 
-    const items = props.items
+
+    const items = carouselItems
     const height = props.height
     const delay = props.delay || 8
     const [pos, setPos] = useState(0)
@@ -55,6 +68,8 @@ function Carousel(props) {
                 items.item.map((item, index) => {
                     return (
                     pos === index &&
+                            <>
+                            <div className={Style.cut}></div>
                             <section>
                                 <figure className={Style.figurecontainer} style={{ ...containerHeight, backgroundImage: `url(${item.img})` }}>
                                     <RiArrowLeftCircleLine className={Style.buttonleft} onClick={() => { posHandler("decre") }} />
@@ -62,6 +77,7 @@ function Carousel(props) {
                                 </figure>
                             <figcaption className={Style.caption}>{item.text}</figcaption>
                             </section>
+                            </>
                         )
                 })
             }
