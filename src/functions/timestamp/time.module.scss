@@ -1,0 +1,11 @@
+@import '../../components/theme/theme.scss';
+
+.clock{
+    display: inline-block;
+    font-size: $font-size-l;
+    margin-top: $margin;
+    margin-bottom: $margin;
+    background-color: $theme-color;
+    padding-left:2px;
+    padding-right:2px;
+}

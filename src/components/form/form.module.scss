@@ -1,0 +1,60 @@
+@import '../../components/theme/theme.scss';
+
+.form{
+    margin:auto;
+    label{
+        display:block;
+        padding:$padding;
+        margin:$margin/2;
+    }
+    input{
+        display:block;
+        padding:$padding;
+        margin:$margin;   
+        display:inline-block; 
+    }
+
+    span{
+        display: inline-block;
+    }
+
+    select{
+        display:block;
+        padding:$padding;
+        margin:$margin;
+    }
+
+    input:focus{
+        outline-color: $theme-color;
+    }
+
+    .error{
+        color: $alert-red;
+    }
+
+    .radio {
+        display: inline-block;
+        margin: $margin;
+    }
+
+    .radiolabel{
+        display: inline-block;
+    }
+}
+.formbtn{
+    width: 80px;
+    height: 30px;
+    padding: $padding;
+    margin: $margin;
+    background-color: $theme-color;
+    font-size: $font-size-s;
+    outline:none;
+    border:none;
+    border-radius: 4px;
+    color:$font-color-light;
+    transition: all 0.3s ease;
+}
+
+.formbtn:hover{
+    background-color: $theme-color-light;
+}
