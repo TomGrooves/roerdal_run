@@ -5,31 +5,38 @@ import {
   Route,
 } from "react-router-dom";
 import Navbar from './components/navbar/navbar';
+import FrontPage from './sites/frontpage/frontpage';
+import AboutPage from './sites/aboutpage/aboutpage';
+import SignUpPage from './sites/signuppage/signuppage';
+import DistancePage from './sites/distancepage/distancepage';
+import NotFoundPage from './sites/notfoundpage/notfoundpage';
+import AttendingPage from './sites/attendingpage/attendingpage';
+import MobileNavBar from './components/mobilenavbar/mobilenavbar';
 
 function App() {
   
   return (
 
     <Router>
-      <Navbar/>
+      <MobileNavBar/>
       <Switch>
       <Route path="/forside">
-          <div>Forside</div>
+          <FrontPage/>
         </Route>
         <Route path="/om rørdal run">
-          <div>About page</div>
+          <AboutPage/>
         </Route>
         <Route path="/tilmelding">
-          <div>Tilmelding</div>
+          <SignUpPage/>
         </Route>
-        <Route path="/login">
-          <div>Login</div>
+        <Route path="/deltagere">
+          <AttendingPage/>
         </Route>
         <Route path="/distancer">
-          <div>Distancer</div>
+          <DistancePage/>
         </Route>
         <Route path="/*">
-          <div>404 page not found</div>
+          <NotFoundPage/>
         </Route>
       
       </Switch>

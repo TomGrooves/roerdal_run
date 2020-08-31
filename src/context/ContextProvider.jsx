@@ -7,6 +7,7 @@ const AppContextProvider = ({ children }) => {
 // Here goes all states, functions etc. that need to be part of the global scope.
   // state til at gemme login data
   const [loginData, setLoginData] = useState([])
+  const [pageData, setPageData] = useState([])
   
   // useEffect der gemmer logindata fra sessionStorage
   useEffect(() => {
@@ -27,23 +28,32 @@ const AppContextProvider = ({ children }) => {
     }
   }
 
+  // Fetch page data function 
+  const getPageContent = async (page) => {
+    let url = `https://api.mediehuset.net/rordal/pages/${page}`
+    let res = await doFetch(url)
+    setPageData(res)
+}
+
+
   // Navbar options
   const navOptions = {
     height: "50px",
     navlinks : [
       {main:"OM RØRDAL RUN"}, 
       {main:"TILMELDING"}, 
-      {main: "DISTANCER"}, 
-      {main:"LOGIN"},
+      {main:"DISTANCER"}, 
+      {main:"DELTAGERE"},
       {main:"FORSIDE"}
     ],
     search: false,
+    login: true,
   }
 
 
 // Return AppContext.Provider with value={ALL THE VALUES}
     return (
-        <AppContext.Provider value={{doFetch, loginData, setLoginData, navOptions}}>
+        <AppContext.Provider value={{getPageContent,pageData,setPageData,doFetch,loginData,setLoginData,navOptions}}>
             {children}
         </AppContext.Provider>
     );
