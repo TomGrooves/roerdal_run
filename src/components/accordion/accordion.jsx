@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Style from './accordion.module.scss';
+import {RiArrowDownSLine, RiArrowUpSLine} from 'react-icons/ri'
 
 function Accordion(props) {
     
@@ -15,7 +16,9 @@ function Accordion(props) {
 
     return (
     <section className={Style.wrapper}>
-        <div className={Style.accordion} onClick={() => {active ? setActive(false): setActive(true)}} >{title}</div>
+        <span className={Style.accordion} onClick={() => {active ? setActive(false): setActive(true)}} >{title} 
+            <span className={Style.icon}>{!active ? <RiArrowDownSLine/> : <RiArrowUpSLine/>}</span>
+        </span>
         <article className={active ? Style.shown: Style.hidden}>{child}</article>
     </section>
     )

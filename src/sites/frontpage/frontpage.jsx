@@ -18,15 +18,14 @@ function FrontPage(){
 
     return (
         <section className={Style.mainContainer}>
-            <Carousel delay={400}/>
+            <Carousel/>
             <GridBox columns={2} rows={1} width="50%" child = {
                 <>
                 <div>
                     <h2>{pageData.item && pageData.item.title}</h2>
                     <p>{pageData.item && pageData.item.teaser}</p>
                 </div>
-{/*             {pageData.item && <article>{<p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(pageData.item.content)}}></p>}</article>}
- */}                </>
+              </>
             }/>
         </section>
     )

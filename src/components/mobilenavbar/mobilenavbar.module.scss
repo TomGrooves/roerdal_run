@@ -21,81 +21,48 @@
   }
 }
 
-.menuToggle .inputcontrol {
-  display: block;
-  width: 33px;
-  height: 33px;
-  position: absolute;
-  top: -10px;
-  right: -4px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-}
-
-.menuToggle span {
-  background: white;
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  border-radius: 3px;
-  z-index: 10;
-  transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
-}
-
-.menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-.menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-.menuToggle input:checked~span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: white;
-}
-
-.menuToggle input:checked~span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-.menuToggle input:checked~span:nth-last-child(2) {
-  opacity: 1;
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
 .menu {
   display: grid;
   grid-template-columns: 1fr;
   position: absolute;
   width: auto;
-  margin: -100px 0 0 -180px;
-  padding-right: 50px;
-  padding-top: 125px;
+  margin: -80px 0 0 -200px;
+  margin-top: 60px;
   list-style-type: none;
   transform-origin: 0% 0%;
   transform: translate(100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+
+  a {
+    padding: 4px 4px;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    text-decoration: none;
+  }
 }
 
-.menu a {
-  padding: 4px 4px;
-  font-size: 1.2rem;
-  color: white;
-  border: none;
-  text-decoration: none;
+.menu_shown{
+  display: grid;
+  grid-template-columns: 1fr;
+  position: absolute;
+  width: auto;
+  margin: -80px 0 0 -200px;
+  margin-top: 60px;
+  list-style-type: none;
+  transform-origin: 0% 0%;
+  transform: translate(0, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+
+  a {
+    padding: 4px 4px;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    text-decoration: none;
+  }
 }
 
-.menuToggle input:checked~ul {
-  transform: scale(1.0, 1.0);
-  opacity: 1;
-}
 
 .aside{
   height: 100vh;
@@ -105,4 +72,83 @@
   top:0;
   z-index: 2;
   background-color:blue;
+}
+
+
+// Variables needed to control the position as well as the size of the burgermenu
+// Change these values to change behaviour
+$bar-width: 36px;
+$bar-height:5px;
+$bar-margin: 4px;
+$position:relative;
+$left:0;
+$right:0;
+$top:0;
+$bottom:0;
+$color: white;
+$border-radius: 3px;
+
+
+// Mixins used for control over look and feel as well as positions of spans
+ @mixin spanBar($width, $height){
+    display: block;
+    width: $width;
+    height: $height;
+    background-color: $color;
+    margin: $bar-margin;
+    border-radius: $border-radius;
+    padding: 0;
+    transition: ease 0.4s;
+ }
+
+ @mixin burgerMenu($position,$left,$right,$top,$down){
+    display:block;
+    position: $position;
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+ }
+
+// Set box sizing on body and create two classes which include the necessary mixins
+body{
+    box-sizing: border-box;
+  .burger-container{
+    position:absolute;
+    left: 25%;
+    top: 25%;
+  }
+}
+
+.burger_menu{
+    @include burgerMenu($position,$left,$right,$top,$bottom);
+    span{
+        @include spanBar($bar-width, $bar-height);
+    }
+}
+
+// Then transform position and rotation on all the children
+.burger_menu_collapsed{
+    @include burgerMenu($position,$left,$right,$top,$bottom);
+    
+    // First span gets moved down equal to (its own height + margin) * 1, and rotated +45 deg.
+    span:nth-child(1){
+        @include spanBar($bar-width, $bar-height);
+        transform:translateY(($bar-height + $bar-margin)*1) rotate(45deg);
+    }
+    
+    // Second span gets scaled to 0, thus zooming in and dissapearing.
+    span:nth-child(2){
+        @include spanBar($bar-width, $bar-height);
+        transform: scale(0);
+    }
+    
+    // Third span gets gets moved up equal to negative its own (height + margin) * 1 and rotated -45deg.
+    span:nth-child(3){
+        @include spanBar($bar-width, $bar-height);
+        transform:translateY((-$bar-height - $bar-margin)*1) rotate(-45deg);
+    }    
 }
