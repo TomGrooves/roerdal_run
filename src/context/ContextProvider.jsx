@@ -8,6 +8,7 @@ const AppContextProvider = ({ children }) => {
   // state til at gemme login data
   const [loginData, setLoginData] = useState([])
   const [pageData, setPageData] = useState([])
+  const [allPageData, setAllPageData] = useState([])
   
   // useEffect der gemmer logindata fra sessionStorage
   useEffect(() => {
@@ -35,6 +36,12 @@ const AppContextProvider = ({ children }) => {
     setPageData(res)
 }
 
+const getAllPageContent = async (page) => {
+    let url = `https://api.mediehuset.net/rordal/pages`
+    let res = await doFetch(url)
+    setAllPageData(res)
+}
+
 
   // Navbar options
   const navOptions = {
@@ -49,6 +56,12 @@ const AppContextProvider = ({ children }) => {
     search: false,
     login: true,
   }
+
+  useEffect(() => {
+      getAllPageContent()
+  }, [])
+
+  console.log(allPageData)
 
 
 // Return AppContext.Provider with value={ALL THE VALUES}

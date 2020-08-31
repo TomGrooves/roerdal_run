@@ -1,10 +1,9 @@
 @import "../theme/theme.scss";
 
 .loginform{
-    width: 40%;
-    margin-left: 10%;
-    margin: 5%;
-    margin-bottom: 25%;
+
+    width: auto;
+    padding-right: 20%;
     h4{
         text-align: start;
         margin-top:$margin;
@@ -72,6 +71,7 @@
     color:red;
     font-size: 1.2rem;
     opacity: 1;
+    background: rgba(0,0,0,0);
 }
 
 .reqhidden{
