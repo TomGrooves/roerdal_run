@@ -1,0 +1,28 @@
+.mainContainer{
+    width: 75%;
+}
+
+.header{
+    margin:0;
+    padding:0;
+}
+
+.searchContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    margin:auto;
+    gap: 16px;
+}
+
+.listContainer{
+    display: grid;
+    width: 80%;
+    margin:auto;
+
+}
+
+.listGridItem{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}

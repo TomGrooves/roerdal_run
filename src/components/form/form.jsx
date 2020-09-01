@@ -1,13 +1,21 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
 import { useForm } from "react-hook-form";
 import Style from './form.module.scss'
+import {postData} from '../../functions/post/post'
+import { AppContext } from "../../context/ContextProvider"
 
 export default function Form(props){
     // use react-hook-form
     const { register, handleSubmit, errors } = useForm();
+    const {loginData, setSubmitted} = useContext(AppContext);
 
     // insert POST function here after arrow function
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => handlePost(data)
+
+    const handlePost = (data) => {
+        postData(data, loginData)
+        setSubmitted(true)
+    }
 
     // formfields to generate. Comes from props in array with objects
     const formfields = props.formfields
@@ -17,25 +25,30 @@ export default function Form(props){
         {formfields && formfields.map((item, index) => {
             return (
                 <div key={index}>
-                {item.type != "radio" && item.label ? <label>{item.label}</label> : null}
-                {item.type == "radio" && item.label ? <label className={Style.radiolabel}>{item.label}</label> : null}
-                {item.type == "input" && <input name={item.name} ref={register(item.name == "email" ? {required: true, pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/} : {pattern: /^[A-Za-z]+$/i, required: true})} />}
+                {item.type != "radio" && item.label ? <label>{item.label} {errors[item.name] && <span className={Style.error}>* </span>}</label> : null}
+                {item.type == "radio" && item.label ? <label className={Style.radiolabel}>{item.label} {errors[item.name] && <span className={Style.error}>* </span>}</label> : null}
+                {item.type == "input" && <input name={item.name} className={item.name == "comment" ? Style.comment : null} ref={register(
+                    item.name == "email" ? {required:true, pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/} :
+                    item.req ? {required:true, pattern: /^[A-Za-z]+$/i} : 
+                    item.name == "address" ? {required:true} : 
+                    item.name == "area" ? {required: true, pattern: /^[0-9]*$/} : 
+                    item.name == "date" ? {required:true} : 
+                    item.name == "phone" ? {required: true, pattern: /^[0-9]*$/} : null) 
+                    } />}
                 {item.type == "radio" && <input className={Style.radio} type="radio" name={item.name} ref={register({required: true})}></input>}
                 {item.type == "select" && <select name={item.name} ref={register({required: true})}>
+                        <option value="">Vælg</option>
                         {item.selectOptions && item.selectOptions.map((item, index) => {
                             return <option key={index} value={item.value} name={item.name}>{item.name}</option>
                         })}
                     </select>}
-                {errors[item.name] && <span className={Style.error}>* </span>}
-                {errors[item.name] && item.name == "name" ? <span> Name is not filled out</span>: null}
-                {errors[item.name] && item.name == "email" ? <span> Email is not filled out or contains illegal characters</span>: null}
-                {errors[item.name] && item.name == "password" ? <span> Password is not filled out</span>: null}
-                {errors[item.name] && item.name == "accept" ? <span> You need to accept</span> : null}
-                {errors[item.name] && item.name != "name" && item.name != "email" && item.name != "password" && item.name != "accept" ? <span> Required field</span> : null}
+                {item.type == "date" && <input name={"date"} type="date" ref={register({required: true})}></input>}
                 </div>
         )})
         }
-        <input className={Style.formbtn} type="submit"/>
+        <div>
+        <input className={Style.formbtn} type="submit" value="Tilmeld"/>
+        </div>
       </form>
         )
     }

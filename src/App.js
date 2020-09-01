@@ -15,11 +15,10 @@ import MobileNavBar from './components/mobilenavbar/mobilenavbar';
 function App() {
   
   return (
-
     <Router>
       <MobileNavBar/>
       <Switch>
-      <Route path="/forside">
+        <Route path="/forside">
           <FrontPage/>
         </Route>
         <Route path="/om rørdal run">
@@ -37,7 +36,6 @@ function App() {
         <Route path="/*">
           <NotFoundPage/>
         </Route>
-      
       </Switch>
     </Router>
   );

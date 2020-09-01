@@ -1,0 +1,17 @@
+.mainContainer{
+    width: 75%;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns:1fr;
+    width: 95%;
+    margin-top: -25px;
+    z-index: 3;
+    margin:auto;
+    gap: 8px;
+
+    h2{
+        margin:0;
+    }
+}

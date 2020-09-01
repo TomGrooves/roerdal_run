@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from 'react'
 import Style from './login.module.scss'
-import Cookies from 'js-cookie';
 
 function Login() {
 
@@ -42,7 +41,7 @@ function Login() {
         if (!key.message){
             setLoginData(key)
             console.log(key)
-            Cookies.set('token', JSON.stringify(key), {expires: 7})
+            sessionStorage.setItem('token', JSON.stringify(key), {expires: 7})
             //sessionStorage.setItem('token', JSON.stringify(key)) 
         }
   
@@ -54,7 +53,7 @@ function Login() {
       // function to log out
       const logOut = () => {
           setLoginData([])
-          Cookies.remove('token')
+          sessionStorage.removeItem('token')
           //sessionStorage.removeItem('token');
           setMessage("Du er nu logget ud")
 
@@ -65,8 +64,8 @@ function Login() {
       }
 
       useEffect(() => {
-          if (Cookies.get('token')){
-              setLoginData(JSON.parse(Cookies.get('token')))
+          if (sessionStorage.getItem('token')){
+              setLoginData(JSON.parse(sessionStorage.getItem('token')))
           }
       }, [])
 

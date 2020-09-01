@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 const Section = styled.section`
     display: grid;
-    margin: auto;
-    justify-items: center;
+    margin ${props => props.margin || "0"};
+    justify-items: ${props => props.align || "center"};
     align-item: center;
     grid-template-columns: repeat(${props => props.columns}, 1fr);
     grid-template-rows: repeat(${props => props.rows}, 1fr);

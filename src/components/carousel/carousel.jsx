@@ -63,7 +63,7 @@ function Carousel(props) {
     }, [pos])
 
     return (
-        <section>
+        <div>
             {
                 items.item.map((item, index) => {
                     return (
@@ -81,7 +81,7 @@ function Carousel(props) {
                         )
                 })
             }
-        </section>
+        </div>
     )
 }
 export default Carousel

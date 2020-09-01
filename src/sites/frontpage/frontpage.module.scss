@@ -1,3 +1,45 @@
 .mainContainer{
-    width: 88vw;
+    width: 75%;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: 0.5fr 0.9fr;
+    width: 95%;
+    margin-top: -25px;
+    z-index: 3;
+    margin:auto;
+    gap: 8px;
+
+    h2{
+        margin:0;
+    }
+}
+
+.gridItem{
+    height: 25vh;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 0.4fr;
+    button{
+        align-self: end;
+        height: 35px;
+    }
+    p{
+        height: 15vh;
+    }
+
+    h2{
+        margin:8px;
+    }
+}
+
+.routeText{
+    height: 20vh;
+    margin: 0;
+    padding:0;
+
+    h2{
+        margin:0;
+        padding:0;
+    }
 }
