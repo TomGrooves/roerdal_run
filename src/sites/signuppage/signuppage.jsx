@@ -54,7 +54,7 @@ function SignupPage() {
             <section className={Style.formContainer}>
                 {!submitted && <Form formfields={formfields} />}
                 {submitted &&
-                    <div>
+                    <div className={Style.gridContainer}>
                         <h2>Du er nu tilmeldt Rørdal Run</h2>
                         <p>Mange tak for din tilmelding. Du vil modtage en e-mail fra os med dit løbenummer, samt informationer vedr. Rørdal Run.</p>
                         <p>Tak og vi ses!</p>

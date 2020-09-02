@@ -18,13 +18,14 @@
 }
 
 .cut{
+    margin:0;
     position: relative;
     border-style: solid;
-    border-width: 10vh 0 0 100vw;
+    border-width: 10vh 0 0 97vw;
     border-color: transparent transparent transparent #ffffff;
-    top: 51vh;
+    top: 42vh;
     left: 0;
-    width: 100%;
+    width: 85vw;
     z-index: 1;
     overflow: hidden;
     margin-top: -11vh;

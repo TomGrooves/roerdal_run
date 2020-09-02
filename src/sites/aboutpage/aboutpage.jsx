@@ -3,6 +3,7 @@ import { AppContext } from "../../context/ContextProvider"
 import GridBox from '../../components/gridbox/gridbox'
 import DOMPurify from 'dompurify'
 import Carousel from '../../components/carousel/carousel'
+import Style from './aboutpage.module.scss'
 
 function AboutPage(){
     const {getPageContent, setPageData, pageData} = useContext(AppContext);
@@ -15,15 +16,13 @@ function AboutPage(){
     console.log(pageData)
 
     return (
-        <section>
+        <section className={Style.mainContainer}>
             <Carousel/>
-            <GridBox width="50%" child = {
-                <>
+                <div className={Style.topContainer}>
                     <h2>{pageData.item && pageData.item.title}</h2>
                     <p>{pageData.item && pageData.item.teaser}</p>
                     {pageData.item && <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(pageData.item.content)}}></p>}
-                </>
-            }/>
+                </div>
         </section>
     )
 }

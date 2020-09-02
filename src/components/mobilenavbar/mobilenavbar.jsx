@@ -8,7 +8,7 @@ import Accordion from '../accordion/accordion'
 
 // Movbile Navbar inspiration from: https://www.cssscript.com/pure-css-fold-out-navigation-menu/
 
-function MobileNavBar(props) {
+function MobileNavBar() {
 
     const { navOptions } = useContext(AppContext);
 
@@ -22,7 +22,7 @@ function MobileNavBar(props) {
         height: options.height,
     }
 
-    const [collapsed, setCollapsed] = useState(false)
+    const [collapsed, setCollapsed] = useState(true)
 
     function burgerMenu(){
 

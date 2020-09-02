@@ -1,5 +1,7 @@
+@import '../../components/theme/theme.scss';
+
 .mainContainer{
-    width: 75%;
+    width: 86.2vw;
 }
 
 .topContainer{
@@ -18,14 +20,40 @@
 }
 
 .gridItem{
+    color: $dark-blue;
     margin-left:25px;
     padding-left: 16px;
+    font-size: $font-body;
     h2{
+        font-size: 3rem;
         margin:0;
+    }
+
+    ul{
+        li{
+            list-style: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
     }
 }
 
 .runContainer{
     display: grid;
     grid-template-columns: 1fr 0.4fr;
+
+    button{
+        align-self: end;
+        height: 35px;
+        background-color: $blue;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        color:white;
+    }
+
+    button:hover{
+        background-color: $dark-blue;
+
+    }
 }

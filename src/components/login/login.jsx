@@ -91,11 +91,16 @@ function Login() {
         <section className={Style.loginform}>
             <p>{loginData && loginData.username ? `Du er logget ind som ${loginData.username}`: message}</p>
             <form>
+            {loginData && !loginData.user_id &&
+            <>
                 <label>Email/brugernavn <span className={usernameReq && loginData && !loginData.user_id ? Style.required : Style.reqhidden}>*</span></label>
                 <input className={usernameReq && loginData && !loginData.user_id ? Style.red : Style.green} type="username" value={username} onChange={(e)=>{setUsername(e.target.value)}} required placeholder="Indtast din email"></input>
                 <label>Adgangskode <span className={passwordReq && loginData && !loginData.user_id ? Style.required : Style.reqhidden}>*</span></label>
                 <input className={passwordReq && loginData && !loginData.user_id ? Style.red : Style.green} type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} required placeholder="Indtast din adgangskode"></input>
-                {loginData && !loginData.user_id && <button className={Style.loginbtn} onClick={(e)=>sendLoginRequest(e)}>LOG IND</button>}
+                 <button className={Style.loginbtn} onClick={(e)=>sendLoginRequest(e)}>LOG IND</button>
+                 </>
+                 }
+              
                 {loginData && loginData.user_id && <button className={Style.logoutbtn} onClick={()=>logOut()}>LOG UD</button>
                 }
             </form>

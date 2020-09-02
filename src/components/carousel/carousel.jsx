@@ -25,11 +25,11 @@ function Carousel(props) {
 
     const items = carouselItems
     const height = props.height
-    const delay = props.delay || 8
+    const delay = props.delay || 1000
     const [pos, setPos] = useState(0)
 
     const containerHeight = {
-        height: height || "50vh",
+        height: height || "40vh",
     }
 
     const posHandler = (i) => {

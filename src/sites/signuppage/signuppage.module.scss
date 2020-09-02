@@ -1,12 +1,24 @@
+@import '../../components/theme/theme.scss';
+
 .mainContainer{
-    width: 75%;
+    width: 86.2vw;
 }
+
+.topContainer{
+    width: 95%;
+    margin:auto;    
+    margin-top: -25px;
+    z-index: 3;
+    h2{
+        margin:0;
+    }
+}
+
 
 .gridContainer{
     display: grid;
     grid-template-columns:1fr;
     width: 95%;
-    margin-top: -25px;
     z-index: 3;
     margin:auto;
     gap: 8px;

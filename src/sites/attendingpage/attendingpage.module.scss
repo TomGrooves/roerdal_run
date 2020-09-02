@@ -1,10 +1,16 @@
+@import '../../components/theme/theme.scss';
+
 .mainContainer{
-    width: 75%;
+    width: 86.2vw;
 }
 
-.header{
-    margin:0;
-    padding:0;
+.topContainer{
+    width: 95%;
+    margin:auto;    
+    z-index: 3;
+    h2{
+        margin:0;
+    }
 }
 
 .searchContainer{
@@ -13,13 +19,101 @@
     width: 80%;
     margin:auto;
     gap: 16px;
+    background-color: $light-blue;
+    padding: 32px 0 32px 0;
+    margin-bottom: 2%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+
+    div{
+        button{
+
+            width: 50px;
+            padding: 13px;
+            height: 100%;
+            border: none;
+            background-color: $blue;
+            transition: background-color, 0.4s ease;
+        }
+
+        button:hover{
+            background-color: $mid-blue;
+        }
+
+        button:focus{
+            outline: none;
+            background-color:$dark-blue;
+        }
+    }
+
+    select{
+        width: 75%;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        border: solid 1px $blue;
+        background-color: white;
+    }
+
+    input{
+
+        width: 75%;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        border: solid 1px $blue;
+    }
+
+    input:focus{
+        outline: none;
+    }
+
+    select:focus{
+        outline: none;
+    }
+
 }
 
 .listContainer{
     display: grid;
     width: 80%;
     margin:auto;
+    background-color: $light-blue;
 
+    div{
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+        display: grid;
+        grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr;
+        align-items: center;
+        svg{
+            font-size: 1.2rem;
+            margin-top: 15%;
+            color:$dark-blue;
+            cursor: pointer;
+        }
+        p{
+            display: inline-block;
+        }
+    }
+    
+    li{
+        list-style-type: none;
+        color: $dark-blue;
+    }
+}
+
+.listGridItem:nth-child(odd){
+    background-color: $light-blue;
+    margin:0;
+    padding:12px;
+}
+
+.listGridItem:nth-child(even){
+    background-color: $mid-blue;
+    margin:0;
+    padding:12px;
 }
 
 .listGridItem{

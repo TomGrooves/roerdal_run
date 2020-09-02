@@ -13,6 +13,7 @@ export default function Form(props){
     const onSubmit = data => handlePost(data)
 
     const handlePost = (data) => {
+        console.log(data)
         postData(data, loginData)
         setSubmitted(true)
     }
@@ -46,7 +47,7 @@ export default function Form(props){
                 </div>
         )})
         }
-        <div>
+        <div className={Style.submit}>
         <input className={Style.formbtn} type="submit" value="Tilmeld"/>
         </div>
       </form>

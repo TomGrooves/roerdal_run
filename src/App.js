@@ -11,6 +11,7 @@ import DistancePage from './sites/distancepage/distancepage';
 import NotFoundPage from './sites/notfoundpage/notfoundpage';
 import AttendingPage from './sites/attendingpage/attendingpage';
 import MobileNavBar from './components/mobilenavbar/mobilenavbar';
+import './sites/main.scss'
 
 function App() {
   
@@ -18,20 +19,23 @@ function App() {
     <Router>
       <MobileNavBar/>
       <Switch>
-        <Route path="/forside">
+        <Route exact path="/forside">
           <FrontPage/>
         </Route>
-        <Route path="/om rørdal run">
+        <Route exact path="/om rørdal run">
           <AboutPage/>
         </Route>
-        <Route path="/tilmelding">
+        <Route exact path="/tilmelding">
           <SignUpPage/>
         </Route>
-        <Route path="/deltagere">
+        <Route exact path="/deltagere">
           <AttendingPage/>
         </Route>
-        <Route path="/distancer">
+        <Route exact path="/distancer">
           <DistancePage/>
+        </Route>
+        <Route exact path="/">
+          <FrontPage/>
         </Route>
         <Route path="/*">
           <NotFoundPage/>

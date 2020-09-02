@@ -1,0 +1,15 @@
+@import '../../components/theme/theme.scss';
+
+.mainContainer{
+    width: 86.2vw;
+}
+
+.topContainer{
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+    z-index: 3;
+    h2{
+        margin:0;
+    }
+}

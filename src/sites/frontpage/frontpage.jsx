@@ -4,6 +4,7 @@ import GridBox from '../../components/gridbox/gridbox'
 import DOMPurify from 'dompurify'
 import Carousel from '../../components/carousel/carousel'
 import Style from './frontpage.module.scss'
+import { Link } from 'react-router-dom';
 
 
 function FrontPage(){
@@ -26,14 +27,12 @@ function FrontPage(){
             <Carousel/>
             <article className={Style.gridContainer}>
             
-            <GridBox columns={1} rows={1} child = {
-                <>
-                <div>
+          
+                <div className={Style.topContainer}>
                     <h2>{pageData.item && pageData.item.title}</h2>
                     <p>{pageData.item && pageData.item.teaser}</p>
                 </div>
-              </>
-            }/>
+             
 
             <GridBox child={
                 <>
@@ -54,7 +53,7 @@ function FrontPage(){
                         <article className={Style.gridItem}>
                             <h2>{item.title}</h2>
                             {<p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(tease(item.description))}}></p>}
-                             <button>Tilmeld {item.title}</button>
+                             <Link to="/tilmelding"><button>Tilmeld {item.title}</button></Link>
                         </article>
                        )
                     })
