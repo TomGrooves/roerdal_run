@@ -68,7 +68,7 @@ function Carousel(props) {
                 items.item.map((item, index) => {
                     return (
                     pos === index &&
-                            <>
+                            <div className={Style.hide}>
                             <div className={Style.cut}></div>
                             <section>
                                 <figure className={Style.figurecontainer} style={{ ...containerHeight, backgroundImage: `url(${item.img})` }}>
@@ -77,7 +77,7 @@ function Carousel(props) {
                                 </figure>
                             <figcaption className={Style.caption}>{item.text}</figcaption>
                             </section>
-                            </>
+                            </div>
                         )
                 })
             }

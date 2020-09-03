@@ -1,7 +1,7 @@
 @import '../../components/theme/theme.scss';
 
 .mainContainer{
-    width: 86.2vw;
+    width: 100%;
 }
 
 .topContainer{
@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns:1fr;
     width: 95%;
-    z-index: 3;
+    z-index: 1;
     margin:auto;
     gap: 8px;
 

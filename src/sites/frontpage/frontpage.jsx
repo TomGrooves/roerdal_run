@@ -33,8 +33,6 @@ function FrontPage(){
                     <p>{pageData.item && pageData.item.teaser}</p>
                 </div>
              
-
-            <GridBox child={
                 <>
                 <article className={Style.routeText}>
                 <h2>Ruter</h2>
@@ -47,8 +45,9 @@ function FrontPage(){
                         sunt in culpa qui officia deserunt mollit anim id est laborum
                     </p>
                 </article>
-                <GridBox columns={3} child={
-                    allRunData.items && allRunData.items.map((item, index) => {
+                <span></span>
+                <section className={Style.gridRunContainer}>
+                    {allRunData.items && allRunData.items.map((item, index) => {
                        return ( 
                         <article className={Style.gridItem}>
                             <h2>{item.title}</h2>
@@ -56,10 +55,9 @@ function FrontPage(){
                              <Link to="/tilmelding"><button>Tilmeld {item.title}</button></Link>
                         </article>
                        )
-                    })
-                }/>
+                    })}
+                </section>
             </>
-            }/>
             </article>
         </section>
     )

@@ -6,15 +6,17 @@ import SignUpPage from './sites/signuppage/signuppage';
 import DistancePage from './sites/distancepage/distancepage';
 import NotFoundPage from './sites/notfoundpage/notfoundpage';
 import AttendingPage from './sites/attendingpage/attendingpage';
-import MobileNavBar from './components/mobilenavbar/mobilenavbar';
+import NavBar from './components/navbar/navbar';
 import Ratings from './sites/ratingpage/ratings';
 import './sites/main.scss'
 
+
 function App() {
-  
+
+
   return (
     <Router>
-      <MobileNavBar/>
+      <NavBar/>
       <Switch>
         <Route exact path="/forside">
           <FrontPage/>

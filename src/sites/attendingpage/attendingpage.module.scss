@@ -1,11 +1,11 @@
 @import '../../components/theme/theme.scss';
 
 .mainContainer{
-    width: 86.2vw;
+    width: 100%;
 }
 
 .topContainer{
-    width: 95%;
+    width: 90%;
     margin:auto;    
     z-index: 3;
     h2{
@@ -119,4 +119,57 @@
 .listGridItem{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media screen and (max-width: 1000px) {
+
+    .routeText{
+        height: auto;
+    }
+
+    .gridItem{
+        height: auto;
+        p {
+            height: auto;
+        }
+        justify-items: center;
+        width: 95%;
+        margin:auto;
+        padding:0;
+    }
+
+    .listContainer{
+        grid-template-columns: 1fr;
+        width: 95%;
+        margin:auto;
+        gap:8px;
+    }
+
+    .searchContainer{
+        width: 95%;
+        
+        input{
+
+            width: 50%;
+            padding-bottom: 12px;
+            padding-top: 12px;
+            border: solid 1px $blue;
+        }
+    }
+
+    .topContainer{
+        z-index: 0;
+        margin:0;
+        width: 95%;
+        margin:auto;
+    }
+
+    .gridContainer {
+        gap: 16px;
+        margin:auto;
+        grid-template-columns: 1fr;
+    }
+
+    .gridRunContainer {
+        grid-template-columns: 1fr;
+    }
 }

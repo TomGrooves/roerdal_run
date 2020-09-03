@@ -1,8 +1,9 @@
 @import '../../components/theme/theme.scss';
 
 .mainContainer{
-    width: 86.2vw;
+    width: 100%;
 }
+
 .selected{
     transform: scale(2.1);
     color: $dark-blue;
@@ -198,4 +199,10 @@ p{
 .formBtn:hover{
     background-color: $dark-blue;
     color:white;
+}
+
+@media screen and (max-width: 1000px) {
+    .form{
+        grid-template-columns: 1fr;
+    }
 }

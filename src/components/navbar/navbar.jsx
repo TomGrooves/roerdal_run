@@ -1,16 +1,18 @@
 import React, { useContext, useState } from 'react'
+import { AppContext } from "../../context/ContextProvider"
 import { Link } from 'react-router-dom';
 import Login from '../login/login';
-import { AppContext } from "../../context/ContextProvider"
-import Style from './mobilenavbar.module.scss'
+import Style from './navbar.module.scss'
 import Accordion from '../accordion/accordion'
 
 
 // Movbile Navbar inspiration from: https://www.cssscript.com/pure-css-fold-out-navigation-menu/
 
-function MobileNavBar() {
+function RealMobileNavBar() {
+
 
     const { navOptions } = useContext(AppContext);
+    const [collapsed, setCollapsed] = useState(false)
 
     const options = navOptions
     const navLinks = options.navlinks
@@ -22,7 +24,6 @@ function MobileNavBar() {
         height: options.height,
     }
 
-    const [collapsed, setCollapsed] = useState(true)
 
     function burgerMenu(){
 
@@ -36,8 +37,7 @@ function MobileNavBar() {
     // return html
     return (
 
-        <aside className={Style.aside}>
-            <nav className={Style.menuToggle}>
+        <nav className={Style.menuToggle}>
             <div class="burger-container">
                 <div id="burger" className={!collapsed ? Style.burger_menu: Style.burger_menu_collapsed} onClick={() => {burgerMenu()}}>
                     <span></span>
@@ -45,10 +45,11 @@ function MobileNavBar() {
                     <span></span>
                 </div>
             </div>
+            <aside className={!collapsed ? Style.aside: Style.aside_collapsed}>
                 <ul className={!collapsed ? Style.menu : Style.menu_shown}>
                     {navLinks && navLinks.map((item, i) => {
                         if (!item.sub) {
-                            return <Link key={i} to={"/" + item.main.toLowerCase()}>
+                            return <Link onClick={()=>{setCollapsed(false)}} key={i} to={"/" + item.main.toLowerCase()}>
                                 {item.main}
                             </Link>
                         }
@@ -62,9 +63,9 @@ function MobileNavBar() {
                     }/>}
 
                 </ul>
+            </aside>
             </nav>
-        </aside>
     )
 }
 
-export default MobileNavBar
+export default RealMobileNavBar

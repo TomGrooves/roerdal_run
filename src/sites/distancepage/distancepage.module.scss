@@ -1,7 +1,7 @@
 @import '../../components/theme/theme.scss';
 
 .mainContainer{
-    width: 86.2vw;
+    width: 100%;
 }
 
 .topContainer{
@@ -55,5 +55,48 @@
     button:hover{
         background-color: $dark-blue;
 
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .routeText{
+        height: auto;
+    }
+
+    .gridItem{
+        height: auto;
+        p {
+            height: auto;
+        }
+        justify-items: center;
+        width: 95%;
+        margin:auto;
+        padding:0;
+    }
+
+    .runContainer{
+        grid-template-columns: 1fr;
+        width: 95%;
+        margin:auto;
+        gap:8px;
+    }
+
+    .topContainer{
+        z-index: 0;
+        margin:0;
+        width: 95%;
+        margin:auto;
+    }
+
+    .gridContainer {
+        gap: 16px;
+        margin:auto;
+        grid-template-columns: 1fr;
+    }
+
+    .gridRunContainer {
+        grid-template-columns: 1fr;
     }
 }

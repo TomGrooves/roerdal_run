@@ -1,78 +1,118 @@
 @import '../../components/theme/theme.scss';
 
-.mainContainer{
-    width: 86.2vw;
+.mainContainer {
+    width: 100%;
 }
 
-h2{
-    margin:0;
+h2 {
+    margin: 0;
     color: $dark-blue;
     font-size: $font-large;
 }
 
-p{
+p {
     color: $dark-blue;
 }
 
-.topContainer{
+.topContainer {
     width: 95%;
-    margin:auto;    
+    margin: auto;
     margin-top: 0;
     z-index: 3;
 
-    h2{
+    h2 {
         font-size: $font-large;
     }
 }
 
-.gridContainer{
+.gridContainer {
     display: grid;
     grid-template-columns: 0.5fr 0.9fr;
-    width: 95%;
+    width: 90%;
     margin-top: -25px;
     z-index: 3;
-    margin:auto;
+    margin: auto;
     gap: 8px;
 
-    h2{
-        margin:0;
+    h2 {
+        margin: 0;
     }
 }
 
-.gridItem{
+.gridItem {
     height: 25vh;
     display: grid;
     grid-template-rows: 0.5fr 1fr 0.4fr;
-    button{
+
+    button {
         align-self: end;
         height: 35px;
         background-color: $blue;
         border: none;
         border-radius: 4px;
         outline: none;
-        color:white;
+        color: white;
     }
 
-    button:hover{
+    button:hover {
         background-color: $dark-blue;
 
     }
-    p{
+
+    p {
         height: 15vh;
     }
 
-    h2{
-        margin:8px;
+    h2 {
+        margin: 8px;
     }
 }
 
-.routeText{
+.routeText {
     height: 20vh;
     margin: 0;
-    padding:0;
+    padding: 0;
 
-    h2{
+    h2 {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.gridRunContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 8px;
+    margin-bottom: 5%;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .routeText{
+        height: auto;
+    }
+
+    .gridItem{
+        height: auto;
+        p {
+            height: auto;
+        }
+        justify-items: center;
+    }
+
+    .topContainer{
+        z-index: 0;
         margin:0;
-        padding:0;
+    }
+
+    .gridContainer {
+        gap: 16px;
+        margin:auto;
+        grid-template-columns: 1fr;
+    }
+
+    .gridRunContainer {
+        grid-template-columns: 1fr;
     }
 }

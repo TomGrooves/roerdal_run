@@ -20,7 +20,6 @@ function AboutPage(){
             <Carousel/>
                 <div className={Style.topContainer}>
                     <h2>{pageData.item && pageData.item.title}</h2>
-                    <p>{pageData.item && pageData.item.teaser}</p>
                     {pageData.item && <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(pageData.item.content)}}></p>}
                 </div>
         </section>

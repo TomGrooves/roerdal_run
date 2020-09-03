@@ -25,7 +25,7 @@ function Ratings() {
         setAvgRating(res)
     }
 
-    const postRating = async (id) => {
+    const postRating = async () => {
         let url = `https://api.mediehuset.net/rordal/ratings`
         
         let formData = new FormData()
@@ -50,6 +50,19 @@ function Ratings() {
         .catch(error => console.log(error))
     }
 
+/*     const deleteRating = async (id) => {
+        let options = {
+            method: "DELETE",
+            headers: {
+                'Authorization' : `Bearer ${loginData.access_token}`
+            }
+        }
+        let url = `https://api.mediehuset.net/rordal/ratings/${id}`
+        let res = await doFetch(url, options)
+        setMsg("Din kommentar er slettet")
+        console.log(res)
+    } */
+
     const getCommentData = (id) => {
         setSelectedRoute(id)
         getAvgRunRating(id)
@@ -67,14 +80,11 @@ function Ratings() {
     }, [msg])
 
     console.log(runRating)
-    console.log(stars)
-    console.log(comment)
-    console.log(selectedRoute)
 
     return (
         <>
-        <Carousel/>
         <section className={Style.mainContainer}>
+        <Carousel/>
             <div className={Style.topContainer}>
                 <h2>Kommentarer fra Rørdal Runners</h2>
                 <p>Her kan du kommentere et løb eller se hvad andre løbere har sagt om vores ruter</p>
@@ -120,6 +130,7 @@ function Ratings() {
                     <li className={Style.listGridItem}>
                         <p>Kommentar: {item.comment}</p>
                         <p>Antal stjerner: {item.num_stars}</p>
+                       {/*  <button onClick={(e)=>{deleteRating(selectedRoute)}}>Slet</button> */}
                     </li>
                     )
                 })}

@@ -22,15 +22,12 @@ function DistancePage(){
         <section className={Style.mainContainer}> 
             <>
             <Carousel/>
-            <GridBox align={"start"} margin={"8px"} width="90%" child = {
                 <article className={Style.topContainer}>
                     <h2>{pageData.item && pageData.item.title}</h2>
                     {pageData.item && <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(pageData.item.content)}}></div>}
                 </article>
-            }/>
 
-            <GridBox align={"start"} width={"90%"} className={Style.gridContainer} columns={2} child={
-                <>
+                <section className={Style.gridContainer}>
                 <div className={Style.gridItem}>
                     <h2>Distancebeskrivelse</h2>
                     {pageData.item && pageData.item.teaser}
@@ -49,8 +46,7 @@ function DistancePage(){
                         <p>{allRunData.items && allRunData.items[selectedRunID -1].description}</p>
                     </div>}
                 </div>
-                </>
-            }/>
+                </section>
             </>
         </section>
     )

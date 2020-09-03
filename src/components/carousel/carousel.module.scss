@@ -21,7 +21,7 @@
     margin:0;
     position: relative;
     border-style: solid;
-    border-width: 10vh 0 0 97vw;
+    border-width: 10vh 0 0 120vw;
     border-color: transparent transparent transparent #ffffff;
     top: 42vh;
     left: 0;
@@ -29,6 +29,10 @@
     z-index: 1;
     overflow: hidden;
     margin-top: -11vh;
+}
+
+.hide{
+    overflow:hidden;
 }
 
 .caption{
