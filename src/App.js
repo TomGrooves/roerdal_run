@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import {BrowserRouter as Router,Switch,Route,} from "react-router-dom";
 import FrontPage from './sites/frontpage/frontpage';
 import AboutPage from './sites/aboutpage/aboutpage';
 import SignUpPage from './sites/signuppage/signuppage';
@@ -11,6 +7,7 @@ import DistancePage from './sites/distancepage/distancepage';
 import NotFoundPage from './sites/notfoundpage/notfoundpage';
 import AttendingPage from './sites/attendingpage/attendingpage';
 import MobileNavBar from './components/mobilenavbar/mobilenavbar';
+import Ratings from './sites/ratingpage/ratings';
 import './sites/main.scss'
 
 function App() {
@@ -24,6 +21,9 @@ function App() {
         </Route>
         <Route exact path="/om rørdal run">
           <AboutPage/>
+        </Route>
+        <Route exact path="/kommenter">
+          <Ratings/>
         </Route>
         <Route exact path="/tilmelding">
           <SignUpPage/>

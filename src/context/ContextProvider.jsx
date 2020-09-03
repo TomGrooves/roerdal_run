@@ -55,6 +55,7 @@ const AppContextProvider = ({ children }) => {
     setAllAttendants(res)
   }
 
+
   // Navbar options
   const navOptions = {
     height: "50px",
@@ -63,6 +64,7 @@ const AppContextProvider = ({ children }) => {
       { main: "TILMELDING" },
       { main: "DISTANCER" },
       { main: "DELTAGERE" },
+      { main: "KOMMENTER" },
       { main: "FORSIDE" }
     ],
     search: false,

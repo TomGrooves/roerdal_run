@@ -1,11 +1,16 @@
-import React, {useContext} from 'react'
-import { AppContext } from "../../context/ContextProvider"
+import React from 'react'
+import Style from './notfoundpage.module.scss'
+import {Link} from "react-router-dom";
+
 
 function NotFoundPage(){
-    const {doFetch} = useContext(AppContext);
-
     return (
-        <div>404 not found</div>
+        <div className={Style.notFound}>    
+            <h1 className={Style.reg}>40</h1><h1 className={Style.rev}>4</h1>
+            <b>Siden findes ikke!</b>
+            <p>Siden du leder efter findes ikke.</p>
+            <Link to="/forside"><button>Tilbage til forsiden</button></Link>
+        </div>
     )
 }
 

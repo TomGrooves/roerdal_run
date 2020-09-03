@@ -1,10 +1,9 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect, useContext} from 'react'
+import { AppContext } from "../../context/ContextProvider"
 import Style from './login.module.scss'
 
 function Login() {
-
-    // change this to context
-    const [loginData, setLoginData] = useState([])
+    const { loginData, setLoginData} = useContext(AppContext);
 
     // set states needed by component
     const [username, setUsername] = useState("")

@@ -1,0 +1,50 @@
+@import '../../components/theme/theme.scss';
+
+.notFound{
+    width: 86.2vw;
+    text-align: center;
+    .rev{
+        display: inline-block;
+        margin-right:0;
+        transform: rotateX(180deg) translateY(-8px);
+        margin-bottom: 8px;
+    }
+    
+    .reg{
+        display: inline-block;
+        margin-left:0;
+    }
+    h1{
+        color: $dark-blue;
+        font-size: 10rem;
+        margin-bottom: 5%;
+    }
+    b{
+        display:block;
+        color: $dark-blue;
+        font-size: 2.5rem;
+    }
+    p{
+        color: $dark-blue;
+        font-size: 1.8rem;
+    }
+    button{
+        border:none;
+        outline: none;
+        background-color: $dark-blue;
+        color:white;
+        border-radius: 8px;
+        width: 400px;
+        height: 140px;
+        font-size: 1.8rem;
+        padding: 32px;
+        margin: auto;
+        transition: background-color, color 0.4s ease;
+    }
+
+    button:hover{
+        transition: background-color, color 0.4s ease;
+        background-color: $mid-blue;
+    }
+
+}
