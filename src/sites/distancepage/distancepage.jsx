@@ -39,7 +39,7 @@ function DistancePage(){
                     
                     <div className={Style.runContainer}>
                         <h2>{allRunData.items && allRunData.items[selectedRunID -1].title}</h2>
-                        <Link to="/tilmelding"><button>Tilmeld dig {allRunData.items[selectedRunID -1].title}</button></Link>
+                        <Link to="/roerdal_run/tilmelding"><button>Tilmeld dig {allRunData.items[selectedRunID -1].title}</button></Link>
                         <p>{allRunData.items && allRunData.items[selectedRunID -1].description}</p>
                     </div>}
                 </div>

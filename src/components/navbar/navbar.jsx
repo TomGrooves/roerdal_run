@@ -43,7 +43,7 @@ function RealMobileNavBar() {
                 <ul className={!collapsed ? Style.menu : Style.menu_shown}>
                     {navLinks && navLinks.map((item, i) => {
                         if (!item.sub) {
-                            return <Link onClick={()=>{setCollapsed(false)}} key={i} to={"/" + item.main.toLowerCase()}>
+                            return <Link onClick={()=>{setCollapsed(false)}} key={i} to={"/roerdal_run/" + item.main.toLowerCase()}>
                                 {item.main}
                             </Link>
                         }

@@ -46,7 +46,7 @@ function FrontPage(){
                         <article key={index} className={Style.gridItem}>
                             <h2>{item.title}</h2>
                             {<p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(tease(item.description))}}></p>}
-                             <Link to="/tilmelding"><button>Tilmeld {item.title}</button></Link>
+                             <Link to="/roerdal_run/tilmelding"><button>Tilmeld {item.title}</button></Link>
                         </article>
                        )
                     })}

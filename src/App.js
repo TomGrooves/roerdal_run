@@ -17,25 +17,25 @@ function App() {
     <Router>
       <NavBar/>
       <Switch>
-        <Route exact path="/forside">
+        <Route exact path="/roerdal_run/forside">
           <FrontPage/>
         </Route>
-        <Route exact path="/om rørdal run">
+        <Route exact path="/roerdal_run/om rørdal run">
           <AboutPage/>
         </Route>
-        <Route exact path="/kommenter">
+        <Route exact path="/roerdal_run/kommenter">
           <Ratings/>
         </Route>
-        <Route exact path="/tilmelding">
+        <Route exact path="/roerdal_run/tilmelding">
           <SignUpPage/>
         </Route>
-        <Route exact path="/deltagere">
+        <Route exact path="/roerdal_run/deltagere">
           <AttendingPage/>
         </Route>
-        <Route exact path="/distancer">
+        <Route exact path="/roerdal_run/distancer">
           <DistancePage/>
         </Route>
-        <Route exact path="/">
+        <Route exact path="/roerdal_run/">
           <FrontPage/>
         </Route>
         <Route path="/*">
