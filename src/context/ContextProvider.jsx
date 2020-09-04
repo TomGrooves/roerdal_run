@@ -4,11 +4,8 @@ const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
 
-  // Here goes all states, functions etc. that need to be part of the global scope.
-  // state til at gemme login data
   const [loginData, setLoginData] = useState([])
   const [pageData, setPageData] = useState([])
-  const [allPageData, setAllPageData] = useState([])
   const [allRunData, setAllRunData] = useState([])
   const [selectedRunID, setSelectedRunID] = useState(0)
   const [submitted, setSubmitted] = useState(false)
@@ -39,11 +36,6 @@ const AppContextProvider = ({ children }) => {
     let res = await doFetch(url)
     setPageData(res)
   }
-  const getAllPageContent = async (page) => {
-    let url = `https://api.mediehuset.net/rordal/pages`
-    let res = await doFetch(url)
-    setAllPageData(res)
-  }
   const getAllRuns = async () => {
     let url = `https://api.mediehuset.net/rordal/run`
     let res = await doFetch(url)
@@ -72,11 +64,9 @@ const AppContextProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    getAllPageContent()
-    getAllRuns()
+/*     getAllPageContent()
+ */    getAllRuns()
   }, [])
-
-  console.log(allPageData)
 
 
   // Return AppContext.Provider with value={ALL THE VALUES}
@@ -101,8 +91,5 @@ const AppContextProvider = ({ children }) => {
     </AppContext.Provider>
   );
 }
-
-// Now import {AppContextProvider} from './context/ContextProvider'; in Top Hierachi (index.js)
-// Then import { AppContext } from "../../context/ContextProvider" inside component that subscribes &  declare it with: const {testState, setTestState } = useContext(AppContext);
 
 export { AppContext, AppContextProvider } 

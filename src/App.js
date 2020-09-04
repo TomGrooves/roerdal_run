@@ -13,7 +13,6 @@ import './sites/main.scss'
 
 function App() {
 
-
   return (
     <Router>
       <NavBar/>

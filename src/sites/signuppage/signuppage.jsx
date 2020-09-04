@@ -1,13 +1,12 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { AppContext } from "../../context/ContextProvider"
-import GridBox from '../../components/gridbox/gridbox'
 import DOMPurify from 'dompurify'
 import Carousel from '../../components/carousel/carousel'
 import Style from './signuppage.module.scss'
 import Form from '../../components/form/form'
 
 function SignupPage() {
-    const { getPageContent, setPageData, pageData, allRunData, selectedRunID, submitted } = useContext(AppContext);
+    const { getPageContent, setPageData, pageData, submitted } = useContext(AppContext);
 
     useEffect(() => {
         getPageContent(3)
@@ -44,12 +43,10 @@ function SignupPage() {
     return (
         <section className={Style.mainContainer}>
             <Carousel />
-            <GridBox width="90%" align={"start"} child={
                 <article className={Style.gridContainer}>
                     <h2>{pageData.item && pageData.item.title}</h2>
                     {pageData.item && <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(pageData.item.content) }}></div>}
                 </article>
-            } />
 
             <section className={Style.formContainer}>
                 {!submitted && <Form formfields={formfields} />}

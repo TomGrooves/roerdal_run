@@ -2,7 +2,6 @@ import React, {useContext, useState, useEffect} from 'react'
 import Carousel from '../../components/carousel/carousel'
 import Style from './ratings.module.scss'
 import { AppContext } from "../../context/ContextProvider"
-import DOMPurify from 'dompurify'
 
 function Ratings() {
     const {doFetch, loginData} = useContext(AppContext);
@@ -79,8 +78,6 @@ function Ratings() {
         }, 2000);
     }, [msg])
 
-    console.log(runRating)
-
     return (
         <>
         <section className={Style.mainContainer}>
@@ -130,8 +127,8 @@ function Ratings() {
                     <li className={Style.listGridItem}>
                         <p>Kommentar: {item.comment}</p>
                         <p>Antal stjerner: {item.num_stars}</p>
-                       {/*  <button onClick={(e)=>{deleteRating(selectedRoute)}}>Slet</button> */}
-                    </li>
+{/*                         <button onClick={(e)=>{deleteRating(selectedRoute)}}>Slet</button>
+ */}                    </li>
                     )
                 })}
                 {runRating.items && <li className={Style.listGridItem}>

@@ -16,13 +16,7 @@ function RealMobileNavBar() {
 
     const options = navOptions
     const navLinks = options.navlinks
-    const search = options.search
     const login = options.login
-
-    const linkPos = {
-        gridTemplateColumns: `10fr repeat(${search ? navLinks.length + 1 : navLinks.length}, 1fr)`,
-        height: options.height,
-    }
 
 
     function burgerMenu(){

@@ -1,6 +1,5 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { AppContext } from "../../context/ContextProvider"
-import GridBox from '../../components/gridbox/gridbox'
 import DOMPurify from 'dompurify'
 import Carousel from '../../components/carousel/carousel'
 import Style from './frontpage.module.scss'
@@ -19,8 +18,6 @@ function FrontPage(){
         let shortenedString = string.substring(0, 180);
         return shortenedString + "..."
     }
-
-    console.log(pageData)
 
     return (
         <section className={Style.mainContainer}>

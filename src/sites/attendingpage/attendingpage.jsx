@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { AppContext } from "../../context/ContextProvider"
-import GridBox from '../../components/gridbox/gridbox'
 import DOMPurify from 'dompurify'
 import Carousel from '../../components/carousel/carousel'
 import Style from './attendingpage.module.scss'

@@ -1,6 +1,5 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { AppContext } from "../../context/ContextProvider"
-import GridBox from '../../components/gridbox/gridbox'
 import DOMPurify from 'dompurify'
 import Carousel from '../../components/carousel/carousel'
 import Style from './aboutpage.module.scss'
@@ -12,8 +11,6 @@ function AboutPage(){
         getPageContent(4)
         setPageData(pageData)
     }, [])
-
-    console.log(pageData)
 
     return (
         <section className={Style.mainContainer}>

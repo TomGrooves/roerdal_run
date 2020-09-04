@@ -1,6 +1,5 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { AppContext } from "../../context/ContextProvider"
-import GridBox from '../../components/gridbox/gridbox'
 import DOMPurify from 'dompurify'
 import Carousel from '../../components/carousel/carousel'
 import Style from './distancepage.module.scss'
@@ -15,8 +14,6 @@ function DistancePage(){
         getPageContent(2)
         setPageData(pageData)
     }, [])
-
-    console.log(pageData)
 
     return (
         <section className={Style.mainContainer}> 
@@ -38,7 +35,7 @@ function DistancePage(){
                     </ul>
                 </div> 
                 <div>
-                    {selectedRunID == 0 ? <img className={Style.image} src={img5}></img> : 
+                    {selectedRunID == 0 ? <img alt="Runners" className={Style.image} src={img5}></img> : 
                     
                     <div className={Style.runContainer}>
                         <h2>{allRunData.items && allRunData.items[selectedRunID -1].title}</h2>
