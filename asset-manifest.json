@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/roerdal_run/static/css/main.825d0eca.chunk.css",
+    "main.js": "/roerdal_run/static/js/main.9bbb6695.chunk.js",
+    "main.js.map": "/roerdal_run/static/js/main.9bbb6695.chunk.js.map",
+    "runtime-main.js": "/roerdal_run/static/js/runtime-main.9c589c91.js",
+    "runtime-main.js.map": "/roerdal_run/static/js/runtime-main.9c589c91.js.map",
+    "static/js/2.ba537577.chunk.js": "/roerdal_run/static/js/2.ba537577.chunk.js",
+    "static/js/2.ba537577.chunk.js.map": "/roerdal_run/static/js/2.ba537577.chunk.js.map",
+    "index.html": "/roerdal_run/index.html",
+    "precache-manifest.6893bba0289078260992dffc0e79c238.js": "/roerdal_run/precache-manifest.6893bba0289078260992dffc0e79c238.js",
+    "service-worker.js": "/roerdal_run/service-worker.js",
+    "static/css/main.825d0eca.chunk.css.map": "/roerdal_run/static/css/main.825d0eca.chunk.css.map",
+    "static/js/2.ba537577.chunk.js.LICENSE.txt": "/roerdal_run/static/js/2.ba537577.chunk.js.LICENSE.txt",
+    "static/media/img1.jpg": "/roerdal_run/static/media/img1.509f394f.jpg",
+    "static/media/img2.jpg": "/roerdal_run/static/media/img2.27290b53.jpg",
+    "static/media/img3.jpg": "/roerdal_run/static/media/img3.a67196d7.jpg",
+    "static/media/img4.jpg": "/roerdal_run/static/media/img4.16750838.jpg",
+    "static/media/img5.jpg": "/roerdal_run/static/media/img5.a176e644.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c589c91.js",
+    "static/js/2.ba537577.chunk.js",
+    "static/css/main.825d0eca.chunk.css",
+    "static/js/main.9bbb6695.chunk.js"
+  ]
+}
