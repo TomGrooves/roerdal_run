@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Login from '../login/login';
 import Style from './navbar.module.scss'
 import Accordion from '../accordion/accordion'
-
+import {FaInstagram, FaFacebook} from 'react-icons/fa'
 
 // Movbile Navbar inspiration from: https://www.cssscript.com/pure-css-fold-out-navigation-menu/
 
@@ -57,6 +57,9 @@ function RealMobileNavBar() {
                     }/>}
 
                 </ul>
+                <div className={Style.icons}>
+                    <FaInstagram/><FaFacebook/>
+                </div>
             </aside>
             </nav>
     )

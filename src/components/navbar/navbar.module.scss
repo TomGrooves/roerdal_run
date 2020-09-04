@@ -22,6 +22,20 @@
   }
 }
 
+.icons{
+  position: relative;
+  bottom: -95%;
+  font-size: 2rem;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+  gap: 8px;
+  transition: all 0.3s ease;
+  width: 75px;
+  left: 40%;
+}
+
 .menu {
   display: grid;
   grid-template-columns: 1fr;
@@ -80,6 +94,7 @@
   background-color:$dark-blue;
   transform:translateX(350px);
   transition: all 0.4s ease;
+  
 }
 
 .aside_collapsed{
@@ -221,7 +236,6 @@ body{
     }
   }
 }
-
 
 
 @media screen and (max-width: 1000px) {
