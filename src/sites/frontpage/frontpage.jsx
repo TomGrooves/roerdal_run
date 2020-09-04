@@ -23,13 +23,10 @@ function FrontPage(){
         <section className={Style.mainContainer}>
             <Carousel/>
             <article className={Style.gridContainer}>
-            
-          
                 <div className={Style.topContainer}>
                     <h2>{pageData.item && pageData.item.title}</h2>
                     <p>{pageData.item && pageData.item.teaser}</p>
                 </div>
-             
                 <>
                 <article className={Style.routeText}>
                 <h2>Ruter</h2>
@@ -46,7 +43,7 @@ function FrontPage(){
                 <section className={Style.gridRunContainer}>
                     {allRunData.items && allRunData.items.map((item, index) => {
                        return ( 
-                        <article className={Style.gridItem}>
+                        <article key={index} className={Style.gridItem}>
                             <h2>{item.title}</h2>
                             {<p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(tease(item.description))}}></p>}
                              <Link to="/tilmelding"><button>Tilmeld {item.title}</button></Link>

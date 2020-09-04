@@ -68,7 +68,7 @@ function Carousel(props) {
                 items.item.map((item, index) => {
                     return (
                     pos === index &&
-                            <div className={Style.hide}>
+                            <div key={index} className={Style.hide}>
                             <div className={Style.cut}></div>
                             <section>
                                 <figure className={Style.figurecontainer} style={{ ...containerHeight, backgroundImage: `url(${item.img})` }}>

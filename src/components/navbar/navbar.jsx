@@ -32,7 +32,7 @@ function RealMobileNavBar() {
     return (
 
         <nav className={Style.menuToggle}>
-            <div class="burger-container">
+            <div>
                 <div id="burger" className={!collapsed ? Style.burger_menu: Style.burger_menu_collapsed} onClick={() => {burgerMenu()}}>
                     <span></span>
                     <span></span>

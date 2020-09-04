@@ -13,8 +13,6 @@ function SignupPage() {
         setPageData(pageData)
     }, [])
 
-    console.log(pageData)
-
     const formfields = [
         { name: "firstname", label: "Navn", type: "input", req: true },
         { name: "lastname", label: "Efternavn", type: "input", req: true },

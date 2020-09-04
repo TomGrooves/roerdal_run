@@ -68,8 +68,6 @@ function Login() {
           }
       }, [])
 
-      console.log(loginData)
-
       useEffect(() => {
         if (username == ""){
             setUsernameReq(true)
