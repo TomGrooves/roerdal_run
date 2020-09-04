@@ -9,6 +9,7 @@ import AttendingPage from './sites/attendingpage/attendingpage';
 import NavBar from './components/navbar/navbar';
 import Ratings from './sites/ratingpage/ratings';
 import './sites/main.scss'
+import Footer from './sites/footer/footer';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <NotFoundPage/>
         </Route>
       </Switch>
+      <Footer/>
     </Router>
   );
 }
